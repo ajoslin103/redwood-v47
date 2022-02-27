@@ -1,6 +1,4 @@
 // Define your own mock data here:
 export const standard = (/* vars, { ctx, req } */) => ({
-  myCell: {
-    id: 42,
-  },
+  runMutation: 'mock runMutation results',
 })
