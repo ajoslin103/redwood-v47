@@ -14,7 +14,8 @@ export const failure = () => {
 }
 
 export const success = () => {
-  return Success ? <Success {...standard()} /> : null
+  const standardMock = standard()
+  return Success ? <Success runMutation={standardMock?.runMutation} /> : null
 }
 
 export default { title: 'Cells/RunMutationCell' }
