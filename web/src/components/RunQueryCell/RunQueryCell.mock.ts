@@ -1,4 +1,6 @@
 // Define your own mock data here:
 export const standard = (/* vars, { ctx, req } */) => ({
-  runQuery: 'mock runQuery results',
+  runQuery: {
+    result: 'finished runQuery() @ 1645978570920',
+  },
 })
