@@ -1,13 +1,17 @@
 export const schema = gql`
-  type MutantCellAnswer {
+  type MutantCellQueryAnswer {
+    result: String
+  }
+
+  type MutantCellMutationAnswer {
     result: String
   }
 
   type Query {
-    runQuery: MutantCellAnswer @skipAuth
+    runQuery: MutantCellQueryAnswer @skipAuth
   }
 
   type Mutation {
-    runMutation: MutantCellAnswer @skipAuth
+    runMutation: MutantCellMutationAnswer @skipAuth
   }
 `

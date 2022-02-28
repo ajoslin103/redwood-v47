@@ -6,9 +6,16 @@ import RunMutationCell from 'src/components/RunMutationCell'
 
 const MyPagePage = () => {
 
-  const doComplete = () => {}
+  const [data, setData] = React.useState('')
+  const [error, setError] = React.useState('')
 
-  const doError = () => {}
+  const doComplete = (result) => {
+    setData(result)
+  }
+
+  const doError = (err) => {
+    setError(err)
+  }
 
   return (
     <>
@@ -18,12 +25,18 @@ const MyPagePage = () => {
       <p>
         Find me in <code>./web/src/pages/MyPagePage/MyPagePage.tsx</code>
       </p>
+
       <RunQueryCell />
       <RunMutationCell onComplete={doComplete} onError={doError} />
+
       <p>
         My default route is named <code>myPage</code>, link to me with `
         <Link to={routes.myPage()}>MyPage</Link>`
       </p>
+
+      {/* <p>data: {JSON.stringify(data, null, 2)}</p> */}
+      {/* <p>error: {error}</p> */}
+
     </>
   )
 }
