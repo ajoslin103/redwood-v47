@@ -1,9 +1,9 @@
 import QrCode from './QrCode'
-
-const url = 'https://github.com/thedavidprice/storybook-redwood-demo'
+import { standard } from './QrCode.mock'
 
 export const generated = () => {
-  return <QrCode url={url} />
+  const standardMock = standard()
+  return <QrCode url={standardMock} />
 }
 
 export default { title: 'Components/QrCode' }

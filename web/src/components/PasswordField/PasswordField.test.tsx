@@ -1,17 +1,20 @@
 import { render } from '@redwoodjs/testing/web'
 
-import QrCode from './QrCode'
-import { standard } from './QrCode.mock'
+import PasswordField from './PasswordField'
+
+import { Form } from '@redwoodjs/forms'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-const standardMock = standard()
-
-describe('QrCode', () => {
+describe('PasswordField', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<QrCode url={standardMock} />)
+      render(
+        <Form>
+          <PasswordField />
+        </Form>
+      )
     }).not.toThrow()
   })
 })

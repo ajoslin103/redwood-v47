@@ -1,17 +1,14 @@
 import { render } from '@redwoodjs/testing/web'
 
-import QrCode from './QrCode'
-import { standard } from './QrCode.mock'
+import PhoginForm from './PhoginForm'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-const standardMock = standard()
-
-describe('QrCode', () => {
+describe('PhoginForm', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<QrCode url={standardMock} />)
+      render(<PhoginForm />)
     }).not.toThrow()
   })
 })
