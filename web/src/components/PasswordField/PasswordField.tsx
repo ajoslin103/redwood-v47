@@ -7,7 +7,7 @@ import {
   IconButton,
 } from '@mui/material'
 
-import ShowPasswod from '@mui/icons-material/Visibility'
+import ShowPassword from '@mui/icons-material/Visibility'
 import HidePassword from '@mui/icons-material/VisibilityOff'
 
 const PasswordField = ({ password, setPassword }) => {
@@ -28,7 +28,7 @@ const PasswordField = ({ password, setPassword }) => {
               onMouseDown={(e) => e.preventDefault()}
               edge="end"
             >
-              {showPassword ? <HidePassword /> : <ShowPasswod />}
+              {showPassword ? <HidePassword /> : <ShowPassword />}
             </IconButton>
           </InputAdornment>
         }
