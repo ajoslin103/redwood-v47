@@ -17,6 +17,7 @@ const EMailAddressField = ({ eMailAddress, setEMailAddress }) => {
         onChange={handleChange}
         helperText={badEMail ? 'Invalid EMailAddress' : ''}
         label="EMailAddress"
+        type="email"
       />
     </FormControl>
   )

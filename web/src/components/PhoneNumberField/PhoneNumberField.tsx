@@ -16,6 +16,8 @@ import {
   // findPhoneNumbersInText, // Searches for phone numbers in text
 } from 'libphonenumber-js'
 
+// or maybe use this? https://www.npmjs.com/package/react-phone-input-mui
+
 const PhoneNumberFieldField = ({ phoneNumber, setPhoneNumber }) => {
   const [ formattedPhone, setFormattedPhone] = React.useState(phoneNumber)
   const [ backspacing, setBackspacing ] = React.useState(false)
@@ -37,6 +39,7 @@ const PhoneNumberFieldField = ({ phoneNumber, setPhoneNumber }) => {
         onChange={handleChange}
         onKeyDown={checkForBackspace}
         label="PhoneNumberField"
+        type="tel"
       />
     </FormControl>
   )

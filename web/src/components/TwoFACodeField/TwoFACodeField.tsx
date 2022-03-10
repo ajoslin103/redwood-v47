@@ -13,6 +13,7 @@ const TwoFACodeField = ({ twoFACode, setTwoFACode }) => {
         value={twoFACode}
         onChange={(e) => setTwoFACode(e.target.value.replace(/[^0123456789]/g,''))}
         label="2FACode"
+        type="tel"
       />
     </FormControl>
   )
