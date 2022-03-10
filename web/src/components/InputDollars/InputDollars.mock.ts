@@ -1,8 +1,8 @@
 // Define your own mock data here:
 export const standard = (/* vars, { ctx, req } */) => {
-    const [eMailAddress, setEMailAddress] = React.useState('')
+    const [currencyValue, setCurrencyValue] = React.useState('')
   return {
-    eMailAddress,
-    setEMailAddress,
+    currencyValue,
+    setCurrencyValue,
   }
 }

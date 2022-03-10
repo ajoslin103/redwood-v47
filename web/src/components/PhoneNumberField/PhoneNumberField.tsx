@@ -18,7 +18,7 @@ import {
 
 // or maybe use this? https://www.npmjs.com/package/react-phone-input-mui
 
-const PhoneNumberFieldField = ({ phoneNumber, setPhoneNumber }) => {
+const PhoneNumberField = ({ phoneNumber, setPhoneNumber }) => {
   const [ formattedPhone, setFormattedPhone] = React.useState(phoneNumber)
   const [ backspacing, setBackspacing ] = React.useState(false)
   const checkForBackspace = (evt) => {
@@ -45,4 +45,4 @@ const PhoneNumberFieldField = ({ phoneNumber, setPhoneNumber }) => {
   )
 }
 
-export default PhoneNumberFieldField
+export default PhoneNumberField
