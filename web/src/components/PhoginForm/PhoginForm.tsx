@@ -1,14 +1,13 @@
 // https://mui.com/components
 import { Button, Stack } from '@mui/material'
 
-// https://www.npmjs.com/package/javascript-stringify
-// import { stringify } from 'javascript-stringify'
-
 import PasswordField from 'src/components/PasswordField'
+import TwoFACodeField from 'src/components/TwoFACodeField'
 import PhoneNumberField from 'src/components/PhoneNumberField'
 
 const PhoginForm = () => {
   const [password, setPassword] = React.useState('')
+  const [twoFACode, setTwoFACode] = React.useState('')
   const [phoneNumber, setPhoneNumber] = React.useState('')
   const handleSubmit = (event: React.SyntheticEvent) => {
     const values = { password, phoneNumber }
@@ -19,6 +18,7 @@ const PhoginForm = () => {
       <Stack spacing={2} direction="column">
         <PhoneNumberField phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
         <PasswordField password={password} setPassword={setPassword} />
+        <TwoFACodeField twoFACode={twoFACode} setTwoFACode={setTwoFACode} />
         <Button onClick={handleSubmit} color="primary" variant="contained">
           Login
         </Button>
