@@ -4,11 +4,13 @@ import { Button, Stack } from '@mui/material'
 import PasswordField from 'src/components/PasswordField'
 import TwoFACodeField from 'src/components/TwoFACodeField'
 import PhoneNumberField from 'src/components/PhoneNumberField'
+import EMailAddressField from 'src/components/EMailAddressField'
 
 const PhoginForm = () => {
   const [password, setPassword] = React.useState('')
   const [twoFACode, setTwoFACode] = React.useState('')
   const [phoneNumber, setPhoneNumber] = React.useState('')
+  const [emailAddress, setEMailAddress] = React.useState('')
   const handleSubmit = (event: React.SyntheticEvent) => {
     const values = { password, phoneNumber }
     console.debug(`values: ${JSON.stringify(values)}`)
@@ -16,6 +18,7 @@ const PhoginForm = () => {
   return (
     <form>
       <Stack spacing={2} direction="column">
+        <EMailAddressField emailAddress={emailAddress} setEMailAddress={setEMailAddress} />
         <PhoneNumberField phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
         <PasswordField password={password} setPassword={setPassword} />
         <TwoFACodeField twoFACode={twoFACode} setTwoFACode={setTwoFACode} />
