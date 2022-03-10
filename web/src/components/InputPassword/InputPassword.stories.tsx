@@ -1,4 +1,4 @@
-import PasswordField from './PasswordField'
+import InputPassword from './InputPassword'
 
 import { Form } from '@redwoodjs/forms'
 
@@ -6,9 +6,9 @@ export const generated = () => {
   const [password, setPassword] = React.useState('')
   return (
     <Form>
-      <PasswordField password={password} setPassword={setPassword} />
+      <InputPassword password={password} setPassword={setPassword} />
     </Form>
   )
 }
 
-export default { title: 'Components/PasswordField' }
+export default { title: 'Components/InputPassword' }

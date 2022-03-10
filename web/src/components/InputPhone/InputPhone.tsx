@@ -18,7 +18,7 @@ import {
 
 // or maybe use this? https://www.npmjs.com/package/react-phone-input-mui
 
-const PhoneNumberField = ({ phoneNumber, setPhoneNumber }) => {
+const InputPhone = ({ phoneNumber, setPhoneNumber }) => {
   const [ formattedPhone, setFormattedPhone] = React.useState(phoneNumber)
   const [ backspacing, setBackspacing ] = React.useState(false)
   const checkForBackspace = (evt) => {
@@ -32,17 +32,17 @@ const PhoneNumberField = ({ phoneNumber, setPhoneNumber }) => {
   }
   return (
     <FormControl variant="outlined">
-      <InputLabel htmlFor="outlined-phonenumberfield">Phone Number</InputLabel>
+      <InputLabel htmlFor="outlined-inputphone">Phone Number</InputLabel>
       <OutlinedInput
-        id="outlined-phonenumberfield"
+        id="outlined-inputphone"
         value={formattedPhone}
         onChange={handleChange}
         onKeyDown={checkForBackspace}
-        label="PhoneNumberField"
+        label="InputPhone"
         type="tel"
       />
     </FormControl>
   )
 }
 
-export default PhoneNumberField
+export default InputPhone

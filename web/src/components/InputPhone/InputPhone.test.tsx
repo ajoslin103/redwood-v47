@@ -1,19 +1,22 @@
 import { render } from '@redwoodjs/testing/web'
 
-import PasswordField from './PasswordField'
+import InputPhone from './InputPhone'
 
 import { Form } from '@redwoodjs/forms'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-describe('PasswordField', () => {
+describe('InputPhone', () => {
   it('renders successfully', () => {
-  const [password, setPassword] = React.useState('')
+  const [phoneNumber={}, setPhoneNumber] = React.useState('')
   expect(() => {
     render(
       <Form>
-        <PasswordField password={password} setPassword={setPassword} />
+        <InputPhone
+          phoneNumber={phoneNumber}
+          setPhoneNumber={setPhoneNumber}
+        />
       </Form>
     )
   }).not.toThrow()

@@ -5,7 +5,7 @@ import {
   OutlinedInput,
 } from '@mui/material'
 
-const TwoFACodeField = ({ twoFACode, setTwoFACode }) => {
+const Input2FaCode = ({ twoFACode, setTwoFACode }) => {
   return (
     <FormControl variant="outlined">
       <InputLabel>2FACode</InputLabel>
@@ -19,4 +19,4 @@ const TwoFACodeField = ({ twoFACode, setTwoFACode }) => {
   )
 }
 
-export default TwoFACodeField
+export default Input2FaCode

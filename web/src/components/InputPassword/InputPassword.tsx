@@ -10,7 +10,7 @@ import {
 import ShowPassword from '@mui/icons-material/Visibility'
 import HidePassword from '@mui/icons-material/VisibilityOff'
 
-const PasswordField = ({ password, setPassword }) => {
+const InputPassword = ({ password, setPassword }) => {
   const [showPassword, setShowPassword] = React.useState(false)
   return (
     <FormControl variant="outlined">
@@ -38,4 +38,4 @@ const PasswordField = ({ password, setPassword }) => {
   )
 }
 
-export default PasswordField
+export default InputPassword

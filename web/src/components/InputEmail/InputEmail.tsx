@@ -4,7 +4,7 @@ import { FormControl, TextField } from '@mui/material'
 // https://www.npmjs.com/package/validator
 import validator from 'validator'
 
-const EMailAddressField = ({ eMailAddress, setEMailAddress }) => {
+const InputEmail = ({ eMailAddress, setEMailAddress }) => {
   const [badEMail, setBadEmail] = React.useState(false)
   const handleChange = (evt) => {
     setEMailAddress(evt.target.value)
@@ -24,4 +24,4 @@ const EMailAddressField = ({ eMailAddress, setEMailAddress }) => {
   )
 }
 
-export default EMailAddressField
+export default InputEmail

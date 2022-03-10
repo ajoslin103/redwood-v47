@@ -1,10 +1,10 @@
 // https://mui.com/components
 import { Button, Stack } from '@mui/material'
 
-import PasswordField from 'src/components/PasswordField'
-import TwoFACodeField from 'src/components/TwoFACodeField'
-import PhoneNumberField from 'src/components/PhoneNumberField'
-import EMailAddressField from 'src/components/EMailAddressField'
+import InputPassword from 'src/components/InputPassword'
+import Input2FaCode from 'src/components/Input2FaCode'
+import InputPhone from 'src/components/InputPhone'
+import InputEmail from 'src/components/InputEmail'
 
 import InputDollars from 'src/components/InputDollars'
 
@@ -15,17 +15,23 @@ const PhoginForm = () => {
   const [eMailAddress, setEMailAddress] = React.useState('')
   const [currencyValue, setCurrencyValue] = React.useState('')
   const handleSubmit = (event: React.SyntheticEvent) => {
-    const values = { password, phoneNumber }
+    const values = {
+      password,
+      twoFACode,
+      phoneNumber,
+      eMailAddress,
+      currencyValue,
+    }
     console.debug(`values: ${JSON.stringify(values)}`)
   }
   return (
     <form>
       <Stack spacing={2} direction="column">
         <InputDollars currencyValue={currencyValue} setCurrencyValue={setCurrencyValue} />
-        <EMailAddressField eMailAddress={eMailAddress} setEMailAddress={setEMailAddress} />
-        <PhoneNumberField phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
-        <PasswordField password={password} setPassword={setPassword} />
-        <TwoFACodeField twoFACode={twoFACode} setTwoFACode={setTwoFACode} />
+        <InputEmail eMailAddress={eMailAddress} setEMailAddress={setEMailAddress} />
+        <InputPhone phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
+        <InputPassword password={password} setPassword={setPassword} />
+        <Input2FaCode twoFACode={twoFACode} setTwoFACode={setTwoFACode} />
         <Button onClick={handleSubmit} color="primary" variant="contained">
           Login
         </Button>

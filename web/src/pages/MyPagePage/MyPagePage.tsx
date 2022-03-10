@@ -7,7 +7,7 @@ import { standard as QrCodeMock } from 'src/components/QrCode/QrCode.mock'
 import RunQueryCell from 'src/components/RunQueryCell'
 import RunMutationCell from 'src/components/RunMutationCell'
 import QrCode from 'src/components/QrCode'
-import PasswordField from 'src/components/PasswordField'
+import InputPassword from 'src/components/InputPassword'
 import PhoginForm from 'src/components/PhoginForm'
 
 const MyPagePage = () => {

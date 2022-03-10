@@ -1,19 +1,19 @@
 import { render } from '@redwoodjs/testing/web'
 
-import EMailAddressField from './EMailAddressField'
+import Input2FaCode from './Input2FaCode'
 
 import { Form } from '@redwoodjs/forms'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-describe('EMailAddressField', () => {
+describe('Input2FaCode', () => {
   it('renders successfully', () => {
-  const [eMailAddress, setEMailAddress] = React.useState('')
+  const [twoFACode, setTwoFACode] = React.useState('')
   expect(() => {
     render(
       <Form>
-        <EMailAddressField eMailAddress={eMailAddress} setEMailAddress={setEMailAddress} />
+        <Input2FaCode twoFACode={twoFACode} setTwoFACode={setTwoFACode} />
       </Form>
     )
   }).not.toThrow()
