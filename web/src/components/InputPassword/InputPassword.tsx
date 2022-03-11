@@ -10,12 +10,13 @@ import {
 import ShowPassword from '@mui/icons-material/Visibility'
 import HidePassword from '@mui/icons-material/VisibilityOff'
 
-const InputPassword = ({ password, setPassword }) => {
+const InputPassword = ({ password, setPassword, disabled = false }) => {
   const [showPassword, setShowPassword] = React.useState(false)
   return (
     <FormControl variant="outlined">
       <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
       <OutlinedInput
+        disabled={disabled}
         id="outlined-adornment-password"
         type={showPassword ? 'text' : 'password'}
         value={password}

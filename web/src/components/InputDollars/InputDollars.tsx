@@ -11,7 +11,11 @@ import validator from 'validator'
 // hasn't updated to mui5...
 // import CurrencyTextField from '@unicef/material-ui-currency-textfield'
 
-const InputDollars = ({ currencyValue, setCurrencyValue }) => {
+const InputDollars = ({
+  currencyValue,
+  setCurrencyValue,
+  disabled = false,
+}) => {
   const [badCurrency, setBadCurrency] = React.useState(false)
   const handleChange = (evt) => {
     setCurrencyValue(evt.target.value)
@@ -21,6 +25,7 @@ const InputDollars = ({ currencyValue, setCurrencyValue }) => {
     <FormControl variant="outlined">
       <TextField
         error={badCurrency}
+        disabled={disabled}
         id="outlined-currencyvaluefield"
         helperText={badCurrency ? 'Invalid Amount' : ''}
         value={currencyValue}

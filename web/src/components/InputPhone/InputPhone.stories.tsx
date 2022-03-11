@@ -6,7 +6,16 @@ export const generated = () => {
   const [phoneNumber, setPhoneNumber] = React.useState('')
   return (
     <Form>
-      <InputPhone phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
+      <InputPhone
+        disabled={false}
+        phoneNumber={phoneNumber}
+        setPhoneNumber={setPhoneNumber}
+      />
+      <InputPhone
+        disabled={true}
+        phoneNumber={'disabled'}
+        setPhoneNumber={setPhoneNumber}
+      />
     </Form>
   )
 }

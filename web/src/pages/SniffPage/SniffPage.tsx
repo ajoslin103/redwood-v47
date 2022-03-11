@@ -1,18 +1,10 @@
 // https://mui.com/components
-import { Box, Container, Stack, Typography } from '@mui/material'
+import { Container, Stack, Typography } from '@mui/material'
 
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
-import QrCode from 'src/components/QrCode'
-
 const EventQRCodePage = () => {
-
-  const QrCodeData = {
-    size: 256,
-    url: 'https://github.com/thedavidprice/storybook-redwood-demo',
-  }
-
   return (
     <>
       <MetaTags title="EventQrCode" description="EventQrCode page" />
@@ -41,9 +33,8 @@ const EventQRCodePage = () => {
               }}
               variant="h3"
             >
-              Scan this QRCode for admittance
+              Please use a Scratch & Sniff test for admittance
             </Typography>
-            <QrCode size={QrCodeData.size} url={QrCodeData.url} />
           </Stack>
           <Typography
             sx={{

@@ -14,7 +14,13 @@ describe('InputPhone', () => {
     render(
       <Form>
         <InputPhone
+          disabled={false}
           phoneNumber={phoneNumber}
+          setPhoneNumber={setPhoneNumber}
+        />
+        <InputPhone
+          disabled={true}
+          phoneNumber={'disabled'}
           setPhoneNumber={setPhoneNumber}
         />
       </Form>

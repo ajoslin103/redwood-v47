@@ -18,22 +18,24 @@ import {
 
 // or maybe use this? https://www.npmjs.com/package/react-phone-input-mui
 
-const InputPhone = ({ phoneNumber, setPhoneNumber }) => {
-  const [ formattedPhone, setFormattedPhone] = React.useState(phoneNumber)
-  const [ backspacing, setBackspacing ] = React.useState(false)
+const InputPhone = ({ phoneNumber, setPhoneNumber, disabled = false }) => {
+  const [formattedPhone, setFormattedPhone] = React.useState(phoneNumber)
+  const [backspacing, setBackspacing] = React.useState(false)
   const checkForBackspace = (evt) => {
     setBackspacing(/backspace/i.test(evt.key))
   }
   const handleChange = (evt) => {
-    const phoneRaw = evt.target.value.replace(/[^+0123456789]/g, '');
-    const finalCleaned = (backspacing && phoneNumber === phoneRaw) ? phoneRaw.slice(0,-1) : phoneRaw;
-    setPhoneNumber(finalCleaned);
+    const phoneRaw = evt.target.value.replace(/[^+0123456789]/g, '')
+    const finalCleaned =
+      backspacing && phoneNumber === phoneRaw ? phoneRaw.slice(0, -1) : phoneRaw
+    setPhoneNumber(finalCleaned)
     setFormattedPhone(new AsYouType('US').input(finalCleaned))
   }
   return (
     <FormControl variant="outlined">
       <InputLabel htmlFor="outlined-inputphone">Phone Number</InputLabel>
       <OutlinedInput
+        disabled={disabled}
         id="outlined-inputphone"
         value={formattedPhone}
         onChange={handleChange}

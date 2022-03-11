@@ -3,7 +3,7 @@ import { standard } from './QrCode.mock'
 
 export const generated = () => {
   const standardMock = standard()
-  return <QrCode zoom={standardMock.zoom} url={standardMock.url} />
+  return <QrCode size={standardMock.size} url={standardMock.url} />
 }
 
 export default { title: 'Components/QrCode' }

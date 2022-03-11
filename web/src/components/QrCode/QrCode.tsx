@@ -4,7 +4,7 @@ import { Box } from '@mui/material'
 // https://www.npmjs.com/package/qrcode.react
 const QRCode = require('qrcode.react')
 
-const QrCode = ({ url = '', zoom = 1.0 }) => {
+const QrCode = ({ url = '', size = 128 }) => {
   console.debug(`QrCode url: ${url}`)
   const clickQRCode = () => {
     window.open(url, '')
@@ -15,11 +15,10 @@ const QrCode = ({ url = '', zoom = 1.0 }) => {
         display: 'flex',
         alignContent: 'center',
         justifyContent: 'center',
-        zoom: zoom,
       }}
       onClick={clickQRCode}
     >
-      <QRCode value={url} />
+      <QRCode size={size} value={url} />
     </Box>
   )
 }

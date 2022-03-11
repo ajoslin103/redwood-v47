@@ -4,5 +4,6 @@ export const standard = (/* vars, { ctx, req } */) => {
   return {
     phoneNumber,
     setPhoneNumber,
+    disabled: false,
   }
 }

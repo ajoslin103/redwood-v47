@@ -4,7 +4,7 @@ import { FormControl, TextField } from '@mui/material'
 // https://www.npmjs.com/package/validator
 import validator from 'validator'
 
-const InputEmail = ({ eMailAddress, setEMailAddress }) => {
+const InputEmail = ({ eMailAddress, setEMailAddress, disabled = false }) => {
   const [badEMail, setBadEmail] = React.useState(false)
   const handleChange = (evt) => {
     setEMailAddress(evt.target.value)
@@ -13,6 +13,7 @@ const InputEmail = ({ eMailAddress, setEMailAddress }) => {
   return (
     <FormControl variant="outlined">
       <TextField
+        disabled={disabled}
         error={badEMail}
         value={eMailAddress}
         onChange={handleChange}

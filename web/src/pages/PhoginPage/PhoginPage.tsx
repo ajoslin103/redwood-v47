@@ -4,18 +4,17 @@ import { Box, Container, Stack, Typography } from '@mui/material'
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
-import QrCode from 'src/components/QrCode'
+import PhoginForm from 'src/components/PhoginForm'
 
-const EventQRCodePage = () => {
-
-  const QrCodeData = {
+const PhoginPage = () => {
+  const PhoginData = {
     size: 256,
     url: 'https://github.com/thedavidprice/storybook-redwood-demo',
   }
 
   return (
     <>
-      <MetaTags title="EventQrCode" description="EventQrCode page" />
+      <MetaTags title="PhoginPage" description="PhoginPage page" />
       <Container
         sx={{
           height: '100vw',
@@ -31,7 +30,17 @@ const EventQRCodePage = () => {
           }}
           spacing={2}
         >
-          <Stack spacing={2}>
+          <Stack
+            sx={{
+              display: 'flex',
+              alignContent: 'center',
+              justifyContent: 'center',
+              width: '350px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
+            spacing={2}
+          >
             <Typography
               sx={{
                 display: 'flex',
@@ -41,9 +50,20 @@ const EventQRCodePage = () => {
               }}
               variant="h3"
             >
-              Scan this QRCode for admittance
+              Login to check your status
             </Typography>
-            <QrCode size={QrCodeData.size} url={QrCodeData.url} />
+            <PhoginForm />
+            <Typography
+              sx={{
+                display: 'flex',
+                alignContent: 'center',
+                justifyContent: 'center',
+                padding: 2,
+              }}
+              variant="body1"
+            >
+              We will text you a code Please enter it as your Password
+            </Typography>
           </Stack>
           <Typography
             sx={{
@@ -62,4 +82,4 @@ const EventQRCodePage = () => {
   )
 }
 
-export default EventQRCodePage
+export default PhoginPage
