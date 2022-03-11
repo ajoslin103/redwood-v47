@@ -11,7 +11,7 @@ const standardMock = standard()
 describe('QrCode', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<QrCode url={standardMock} />)
+      render(<QrCode zoom={standardMock.zoom} url={standardMock.url} />)
     }).not.toThrow()
   })
 })
