@@ -10,8 +10,8 @@ import VaxxifiLayout from 'src/layouts/VaxxifiLayout'
 const EventQRCodePage = () => {
 
   const QrCodeData = {
-    size: 256,
     url: 'https://github.com/thedavidprice/storybook-redwood-demo',
+    invalid: '',
   }
 
   return (
@@ -29,7 +29,7 @@ const EventQRCodePage = () => {
         >
           Scan this QRCode for admittance
         </Typography>
-        <QrCode size={QrCodeData.size} url={QrCodeData.url} />
+        <QrCode url={QrCodeData.url} invalid="" />
       </Stack>
     </VaxxifiLayout>
   )

@@ -9,12 +9,10 @@ export const generated = () => {
   return (
     <Stack>
       <QrCode
-        size={standardMock.size}
         url={standardMock.url}
         invalid={standardMock.invalid}
       />
       <QrCode
-        size={standardMock.size}
         url={standardMock.url}
         invalid={'Sorry, you are not cleared for this event.'}
       />

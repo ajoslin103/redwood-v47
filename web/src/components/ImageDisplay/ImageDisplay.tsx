@@ -7,7 +7,7 @@ interface Props {
   width?: string;
 }
 
-const Image = ({ src, width = '3rem', height = '3rem' }: Props) => {
+const ImageDisplay = ({ src, width = '3rem', height = '3rem' }: Props) => {
   return <CardMedia
     image={src}
     sx={{
@@ -17,4 +17,4 @@ const Image = ({ src, width = '3rem', height = '3rem' }: Props) => {
   />
 }
 
-export default Image
+export default ImageDisplay

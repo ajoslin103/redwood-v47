@@ -13,7 +13,6 @@ describe('QrCode', () => {
     expect(() => {
       render(
         <QrCode
-          size={standardMock.size}
           url={standardMock.url}
           invalid={standardMock.invalid}
         />

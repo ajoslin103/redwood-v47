@@ -1,17 +1,17 @@
 import { render } from '@redwoodjs/testing/web'
 
-import Image from './Image'
-import { standard } from './Image.mock'
+import ImageDisplay from './ImageDisplay'
+import { standard } from './ImageDisplay.mock'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
 const standardMock = standard()
 
-describe('Image', () => {
+describe('ImageDisplay', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<Image src={standardMock} />)
+      render(<ImageDisplay src={standardMock} />)
     }).not.toThrow()
   })
 })
