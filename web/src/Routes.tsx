@@ -12,6 +12,13 @@ import { Router, Route } from '@redwoodjs/router'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/" page={EventQRCodePage} name="home" />
+      <Route path="/upload-image" page={UploadImagePage} name="uploadImage" />
+      <Route path="/please-wait" page={PleaseWaitPage} name="pleaseWait" />
+      <Route path="/event-pass" page={EventPassPage} name="eventPass" />
+      <Route path="/sniff" page={SniffPage} name="sniff" />
+      <Route path="/phogin" page={PhoginPage} name="phogin" />
+      <Route path="/event-qr-code" page={EventQRCodePage} name="eventQrCode" />
       <Route path="/my-page" page={MyPagePage} name="myPage" />
       <Route notfound page={NotFoundPage} />
     </Router>

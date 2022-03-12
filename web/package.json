@@ -20,15 +20,15 @@
     "@redwoodjs/forms": "0.47.0",
     "@redwoodjs/router": "0.47.0",
     "@redwoodjs/web": "0.47.0",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@types/validator": "^13.7.1",
+    "javascript-stringify": "^2.1.0",
+    "libphonenumber-js": "^1.9.49",
     "prop-types": "15.8.1",
     "qrcode.react": "^1.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.7",
-    "postcss-loader": "^6.2.1",
-    "tailwindcss": "^3.0.23"
+    "react-dom": "17.0.2",
+    "react-webcam": "^7.0.0",
+    "validator": "^13.7.0"
   }
 }

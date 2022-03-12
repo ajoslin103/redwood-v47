@@ -11,7 +11,13 @@ const standardMock = standard()
 describe('QrCode', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<QrCode url={standardMock} />)
+      render(
+        <QrCode
+          url={standardMock.url}
+          invalid={standardMock.invalid}
+          handleClick={standardMock.handleClick}
+        />
+      )
     }).not.toThrow()
   })
 })

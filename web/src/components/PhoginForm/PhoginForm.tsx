@@ -2,46 +2,52 @@
 import { Form, TextField, Label, FieldError, Submit } from '@redwoodjs/forms'
 
 // https://mui.com/components
-import { Button, Stack, TextField as MuiTField } from '@mui/material'
+import { Button, Stack } from '@mui/material'
 
-import PasswordField from 'src/components/PasswordField'
+import InputPassword from 'src/components/InputPassword'
+import InputPhone from 'src/components/InputPhone'
 
-const PhoginForm = () => {
-
-  const onSubmit = (values) => {
-    console.debug(`onSubmit values: ${JSON.stringify(values)}`)
+const PhoginForm = ({ handleSubmit }) => {
+  const [password, setPassword] = React.useState('')
+  const [phoneNumber, setPhoneNumber] = React.useState('')
+  const [enteringPassword, setEnteringPassword] = React.useState(false)
+  const handleLogin = (event: React.SyntheticEvent) => {
+    const values = {
+      password,
+      phoneNumber,
+    }
+    handleSubmit(values);
   }
-
+  const handleSend2FACode = () => {
+    setEnteringPassword(true)
+  }
   return (
-    <Form onSubmit={onSubmit}>
+    <form>
       <Stack spacing={2} direction="column">
-        <TextField name="username" />
-        <Label name="name" className="label" errorClassName="label error" />
-        <TextField
-          name="name"
-          className="input"
-          errorClassName="input error"
-          validation={{ required: true }}
+        <InputPhone
+          disabled={enteringPassword}
+          phoneNumber={phoneNumber}
+          setPhoneNumber={setPhoneNumber}
         />
-        <FieldError name="name" className="error-message" />
-
-        <Label name="email" className="label" errorClassName="label error" />
-        <TextField
-          name="email"
-          className="input"
-          errorClassName="input error"
-          // validation={{
-          //   required: true,
-          //   pattern: {
-          //     value: /[^@]+@[^\.]+\..+/,
-          //   },
-          // }}
-        />
-        <FieldError name="email" className="error-message" />
-
-        <Submit className="button">Save</Submit>
+        {!enteringPassword && (
+          <Button
+            onClick={handleSend2FACode}
+            color="primary"
+            variant="contained"
+          >
+            Send Me A Code
+          </Button>
+        )}
+        {enteringPassword && (
+          <InputPassword password={password} setPassword={setPassword} />
+        )}
+        {enteringPassword && (
+          <Button onClick={handleLogin} color="primary" variant="contained">
+            Login
+          </Button>
+        )}
       </Stack>
-    </Form>
+    </form>
   )
 }
 

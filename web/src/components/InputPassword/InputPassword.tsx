@@ -7,16 +7,16 @@ import {
   IconButton,
 } from '@mui/material'
 
-import ShowPasswod from '@mui/icons-material/Visibility'
+import ShowPassword from '@mui/icons-material/Visibility'
 import HidePassword from '@mui/icons-material/VisibilityOff'
 
-const PasswordField = () => {
-  const [password, setPassword] = React.useState('')
+const InputPassword = ({ password, setPassword, disabled = false }) => {
   const [showPassword, setShowPassword] = React.useState(false)
   return (
     <FormControl variant="outlined">
       <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
       <OutlinedInput
+        disabled={disabled}
         id="outlined-adornment-password"
         type={showPassword ? 'text' : 'password'}
         value={password}
@@ -29,7 +29,7 @@ const PasswordField = () => {
               onMouseDown={(e) => e.preventDefault()}
               edge="end"
             >
-              {showPassword ? <HidePassword /> : <ShowPasswod />}
+              {showPassword ? <HidePassword /> : <ShowPassword />}
             </IconButton>
           </InputAdornment>
         }
@@ -39,4 +39,4 @@ const PasswordField = () => {
   )
 }
 
-export default PasswordField
+export default InputPassword
