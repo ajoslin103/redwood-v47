@@ -1,7 +1,7 @@
 // https://mui.com/components
 import { Box, Button, Stack, Typography } from '@mui/material'
 
-import { Link, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
 import InputPhoto from 'src/components/InputPhoto'
@@ -18,7 +18,7 @@ const UploadImagePage = () => {
   })
 
   const handleUpload = () => {
-    console.debug(`handleUpload`)
+    navigate(routes.eventPass())
   }
 
   return (
@@ -29,6 +29,7 @@ const UploadImagePage = () => {
           display: 'flex',
           alignContent: 'center',
           justifyContent: 'center',
+          textAlign: 'center',
           width: '100%',
         }}
         spacing={1}
@@ -39,8 +40,9 @@ const UploadImagePage = () => {
             display: 'flex',
             alignContent: 'center',
             justifyContent: 'center',
+            padding: 2,
           }}
-          variant="h4"
+          variant="h3"
         >
           Please upload an image of your proof
         </Typography>
@@ -53,17 +55,17 @@ const UploadImagePage = () => {
         >
           <InputPhoto setImgSrc={setImgSrc} disabled={disabled} width={width} />
         </Box>
-          <Box
-            sx={{
-              display: 'flex',
-              alignContent: 'center',
-              justifyContent: 'end',
-            }}
-          >
-            <Button disabled={!imgSrc || disabled} onClick={handleUpload}>
-              Upload Image
-            </Button>
-          </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            alignContent: 'center',
+            justifyContent: 'end',
+          }}
+        >
+          <Button disabled={!imgSrc || disabled} onClick={handleUpload}>
+            Upload Image
+          </Button>
+        </Box>
       </Stack>
     </VaxxifiLayout>
   )

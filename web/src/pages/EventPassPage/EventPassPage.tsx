@@ -1,7 +1,7 @@
 // https://mui.com/components
 import { Box, Button, Stack, Typography } from '@mui/material'
 
-import { Link, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
 import QrCode from 'src/components/QrCode'
@@ -11,6 +11,10 @@ const EventPassPage = () => {
   const QrCodeData = {
     size: 256,
     url: 'https://github.com/thedavidprice/storybook-redwood-demo',
+  }
+
+  const handleClick = () => {
+    navigate(routes.home())
   }
 
   const genQrCodeUrl = () =>
@@ -37,6 +41,7 @@ const EventPassPage = () => {
           display: 'flex',
           alignContent: 'center',
           justifyContent: 'center',
+          textAlign: 'center',
           width: '100%',
         }}
         spacing={2}
@@ -52,7 +57,11 @@ const EventPassPage = () => {
         >
           Event Single-Use Pass
         </Typography>
-        <QrCode url={qrCodeUrl} invalid={thirtyPcnt} />
+        <QrCode
+          handleClick={handleClick}
+          url={qrCodeUrl}
+          invalid={thirtyPcnt}
+        />
         <Typography
           sx={{
             display: 'flex',

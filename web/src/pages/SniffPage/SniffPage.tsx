@@ -15,6 +15,7 @@ const EventQRCodePage = () => {
           display: 'flex',
           alignContent: 'center',
           justifyContent: 'center',
+          textAlign: 'center',
           padding: 2,
         }}
         variant="h3"

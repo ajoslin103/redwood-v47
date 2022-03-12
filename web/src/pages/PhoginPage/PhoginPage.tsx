@@ -1,7 +1,7 @@
 // https://mui.com/components
 import { Stack, Typography } from '@mui/material'
 
-import { Link, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
 import PhoginForm from 'src/components/PhoginForm'
@@ -13,6 +13,10 @@ const PhoginPage = () => {
     url: 'https://github.com/thedavidprice/storybook-redwood-demo',
   }
 
+  const handleSubmit = (values)  => {
+    navigate(routes.pleaseWait())
+  }
+
   return (
     <VaxxifiLayout>
       <MetaTags title="PhoginPage" description="PhoginPage page" />
@@ -21,7 +25,7 @@ const PhoginPage = () => {
           display: 'flex',
           alignContent: 'center',
           justifyContent: 'center',
-          width: '350px',
+          textAlign: 'center',
           marginLeft: 'auto',
           marginRight: 'auto',
         }}
@@ -38,7 +42,7 @@ const PhoginPage = () => {
         >
           Login to check your status
         </Typography>
-        <PhoginForm />
+        <PhoginForm handleSubmit={handleSubmit} />
         <Typography
           sx={{
             display: 'flex',

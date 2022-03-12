@@ -15,6 +15,7 @@ describe('QrCode', () => {
         <QrCode
           url={standardMock.url}
           invalid={standardMock.invalid}
+          handleClick={standardMock.handleClick}
         />
       )
     }).not.toThrow()

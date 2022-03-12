@@ -4,7 +4,7 @@ import { Button, Stack } from '@mui/material'
 import InputPassword from 'src/components/InputPassword'
 import InputPhone from 'src/components/InputPhone'
 
-const PhoginForm = () => {
+const PhoginForm = ({ handleSubmit }) => {
   const [password, setPassword] = React.useState('')
   const [phoneNumber, setPhoneNumber] = React.useState('')
   const [enteringPassword, setEnteringPassword] = React.useState(false)
@@ -13,7 +13,7 @@ const PhoginForm = () => {
       password,
       phoneNumber,
     }
-    console.debug(`values: ${JSON.stringify(values)}`)
+    handleSubmit(values);
   }
   const handleSend2FACode = () => {
     setEnteringPassword(true)

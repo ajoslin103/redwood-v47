@@ -1,7 +1,7 @@
 // https://mui.com/components
 import { Stack, Typography } from '@mui/material'
 
-import { Link, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
 import QrCode from 'src/components/QrCode'
@@ -14,6 +14,10 @@ const EventQRCodePage = () => {
     invalid: '',
   }
 
+  const handleClick = () => {
+    navigate(routes.phogin())
+  }
+
   return (
     <VaxxifiLayout>
       <MetaTags title="EventQrCode" description="EventQrCode page" />
@@ -23,13 +27,14 @@ const EventQRCodePage = () => {
             display: 'flex',
             alignContent: 'center',
             justifyContent: 'center',
+            textAlign: 'center',
             padding: 2,
           }}
           variant="h3"
         >
           Scan this QRCode for admittance
         </Typography>
-        <QrCode url={QrCodeData.url} invalid="" />
+        <QrCode handleClick={handleClick} url={QrCodeData.url} invalid="" />
       </Stack>
     </VaxxifiLayout>
   )

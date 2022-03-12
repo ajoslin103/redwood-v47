@@ -11,6 +11,7 @@ export const generated = () => {
       <QrCode
         url={standardMock.url}
         invalid={standardMock.invalid}
+        handleClick={standardMock.handleClick}
       />
       <QrCode
         url={standardMock.url}

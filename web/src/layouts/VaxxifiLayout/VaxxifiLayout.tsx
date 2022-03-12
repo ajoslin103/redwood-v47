@@ -1,5 +1,15 @@
 // https://mui.com/components
-import { Box, Container, Stack, Typography } from '@mui/material'
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Stack,
+  Toolbar,
+  Typography,
+} from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
 import { createTheme, responsiveFontSizes, ThemeProvider, } from '@mui/material/styles'
 
 let theme = createTheme()
@@ -28,6 +38,10 @@ const VaxxifiLayout = ({ children }: VaxxifiLayoutProps) => {
           }}
           spacing={2}
         >
+          <AppBar>
+            <Toolbar />
+          </AppBar>
+          <Toolbar />
           <Box
             sx={{
               display: 'flex',
