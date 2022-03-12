@@ -52,7 +52,7 @@ const EventPassPage = () => {
         >
           Event Single-Use Pass
         </Typography>
-        <QrCode size={qrCodeSize} url={qrCodeUrl} invalid={thirtyPcnt} />
+        <QrCode url={qrCodeUrl} invalid={thirtyPcnt} />
         <Typography
           sx={{
             display: 'flex',

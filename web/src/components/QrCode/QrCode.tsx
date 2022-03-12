@@ -1,11 +1,13 @@
 // https://mui.com/components
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material'
 
 // https://www.npmjs.com/package/qrcode.react
 const QRCode = require('qrcode.react')
 
-const QrCode = ({ url = '', size = 128, invalid = '' }) => {
+const QrCode = ({ url = '', invalid = '' }) => {
   console.debug(`QrCode url: ${url}`)
+  const theme = useTheme()
+  const size = useMediaQuery(theme.breakpoints.up('sm')) ? 256 : 128
   const clickQRCode = () => {
     window.open(url, '')
   }
@@ -23,10 +25,10 @@ const QrCode = ({ url = '', size = 128, invalid = '' }) => {
           alignContent: 'center',
           justifyContent: 'center',
           textAlign: 'center',
-          fontSize: size / 6,
           width: size,
           height: size,
         }}
+        variant="h5"
       >
         {invalid}
       </Typography>
@@ -39,7 +41,7 @@ const QrCode = ({ url = '', size = 128, invalid = '' }) => {
         justifyContent: 'center',
       }}
     >
-      <QRCode onClick={clickQRCode} size={size} value={url} />
+      <QRCode size={size} onClick={clickQRCode} value={url} />
     </Box>
   )
 }

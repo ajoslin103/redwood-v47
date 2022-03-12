@@ -1,5 +1,10 @@
 // https://mui.com/components
 import { Box, Container, Stack, Typography } from '@mui/material'
+import { createTheme, responsiveFontSizes, ThemeProvider, } from '@mui/material/styles'
+
+let theme = createTheme()
+theme = responsiveFontSizes(theme)
+
 
 type VaxxifiLayoutProps = {
   children?: React.ReactNode
@@ -7,44 +12,46 @@ type VaxxifiLayoutProps = {
 
 const VaxxifiLayout = ({ children }: VaxxifiLayoutProps) => {
   return (
-    <Container
-      sx={{
-        height: '100vw',
-      }}
-    >
-      <Stack
+    <ThemeProvider theme={theme}>
+      <Container
         sx={{
-          display: 'flex',
-          alignContent: 'center',
-          justifyContent: 'space-between',
-          height: '100%',
-          padding: 2,
+          height: '100vw',
         }}
-        spacing={2}
       >
-        <Box
+        <Stack
           sx={{
             display: 'flex',
             alignContent: 'center',
-            justifyContent: 'center',
-            width: '100%',
-          }}
-        >
-          {children}
-        </Box>
-        <Typography
-          sx={{
-            display: 'flex',
-            alignContent: 'end',
-            justifyContent: 'end',
+            justifyContent: 'space-between',
+            height: '100%',
             padding: 2,
           }}
-          variant="h6"
+          spacing={2}
         >
-          Vaxxifi Systems, Inc.
-        </Typography>
-      </Stack>
-    </Container>
+          <Box
+            sx={{
+              display: 'flex',
+              alignContent: 'center',
+              justifyContent: 'center',
+              width: '100%',
+            }}
+          >
+            {children}
+          </Box>
+          <Typography
+            sx={{
+              display: 'flex',
+              alignContent: 'end',
+              justifyContent: 'end',
+              fontSize: '1rem',
+              padding: 2,
+            }}
+          >
+            Vaxxifi Systems, Inc.
+          </Typography>
+        </Stack>
+      </Container>
+    </ThemeProvider>
   )
 }
 
