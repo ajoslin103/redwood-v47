@@ -4,7 +4,7 @@ import { standard } from './EventPassPage.mock'
 const standardMock = standard()
 
 export const generated = () => {
-  return <EventPassPage {...standardMock} />
+  return <EventPassPage />
 }
 
 export default { title: 'Pages/EventPassPage' }

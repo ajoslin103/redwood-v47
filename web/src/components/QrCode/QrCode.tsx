@@ -16,7 +16,6 @@ const QrCode = ({ url = '', size = 128, invalid = '' }) => {
         alignContent: 'center',
         justifyContent: 'center',
       }}
-      onClick={clickQRCode}
     >
       <Typography
         sx={{
@@ -24,8 +23,7 @@ const QrCode = ({ url = '', size = 128, invalid = '' }) => {
           alignContent: 'center',
           justifyContent: 'center',
           textAlign: 'center',
-          fontSize: Math.floor(size / 5),
-          padding: 2,
+          fontSize: size / 6,
           width: size,
           height: size,
         }}
@@ -40,9 +38,8 @@ const QrCode = ({ url = '', size = 128, invalid = '' }) => {
         alignContent: 'center',
         justifyContent: 'center',
       }}
-      onClick={clickQRCode}
     >
-      <QRCode size={size} value={url} />
+      <QRCode onClick={clickQRCode} size={size} value={url} />
     </Box>
   )
 }
