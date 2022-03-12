@@ -24,11 +24,11 @@ const QrCode = ({ url = '', size = 128, invalid = '' }) => {
           alignContent: 'center',
           justifyContent: 'center',
           textAlign: 'center',
+          fontSize: Math.floor(size / 5),
           padding: 2,
           width: size,
           height: size,
         }}
-        variant="h5"
       >
         {invalid}
       </Typography>
